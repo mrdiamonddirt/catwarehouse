@@ -9,7 +9,7 @@ function App() {
 
   // State to store the array of the basket 
   // Needed here so we can pass the data to both the header and the main section
-  const [basket, setBasket] = useState([])
+  const [basket, setBasket] = useState([{}, {}])
 
   // Calculate the amount of items in the basket
   let basketQuanity = basket.length;

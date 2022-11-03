@@ -4,14 +4,12 @@ import catmidlogo from '../assets/images/catmidlogo.png'
 import Cats4Lyf from '../assets/images/Cats4Lyf.png'
 import { useState } from "react";
 
-const Navbar = () => {
-
-    // const[displayCart, setDisplayCart] = useState(false)
+const Navbar = (props) => {
     return(
         <NavBarWrapper>
         <MainLogo><img alt="Logo" src={Cats4Lyf}></img></MainLogo>
-        <MidLogo><img alt="MidLogo" src={catmidlogo} onClick=""></img></MidLogo>
-        <Basket><img alt="BasketImg" src={basket}></img><BasketCounter>9</BasketCounter></Basket>
+        <MidLogo><img alt="MidLogo" src={catmidlogo}></img></MidLogo>
+        <Basket><img alt="BasketImg" src={basket}></img><BasketCounter>{props.basketQuanity}</BasketCounter></Basket>
        </NavBarWrapper>
     )
 }

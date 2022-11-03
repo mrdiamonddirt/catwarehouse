@@ -1,20 +1,46 @@
+import { useState } from "react";
 import Navbar from "./components/Navbar";
 import './App.css';
 import Footer from './components/Footer';
 import {Home} from './components/Home'
-import {Cart} from './components/Cart';
-import { useState } from "react";
-
-
+import { useEffect , useState } from "react";
+import { faker } from "@faker-js/faker";
 
 
 function App() {
-  const[displayCart, setDisplayCart] = useState(false)
+const [cats, setCats] = useState([])
+
+// useEffect for calling api
+useEffect(() => {
+async function getCats() {
+try {
+  const catData = await fetch('https://api.thecatapi.com/v1/images/search?limit=10')
+  const newdata = await catData.json()
+  const catArray = newdata.map((cat) => {
+    return{
+            catid: cat.id,
+            catimage: cat.url,
+            price: faker.commerce.price(100, 200),
+          };
+  })
+  setCats(catArray)
+} catch (error) {
+  
+}} 
+getCats() 
+}, [])
+
+  // State to store the array of the basket 
+  // Needed here so we can pass the data to both the header and the main section
+  const [basket, setBasket] = useState([{}, {}])
+
+  // Calculate the amount of items in the basket
+  let basketQuanity = basket.length;
 
   return (
 
     <div >
-    <Navbar></Navbar>
+    <Navbar basketQuanity={basketQuanity}></Navbar>
     <Home></Home>
     <Cart isVisible={displayCart}></Cart>
     <Footer></Footer>

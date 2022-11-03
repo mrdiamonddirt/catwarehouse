@@ -2,11 +2,11 @@ import React from "react";
 import styled from "styled-components";
 
 
-export const Cart= ()=>{
+export const Cart= (props)=>{
 
     return(
         
-        <CartWrapper>
+        <CartWrapper isVisible={props.isVisible}>
             <h1>Your cart:</h1>
             <CartItem>
                 <img></img>
@@ -22,7 +22,16 @@ export const Cart= ()=>{
     )
 }
 
-const CartWrapper= styled.div``
+const CartWrapper= styled.div`
+    position: fixed;
+    top: calc(10vh + 40px);
+    right: ${(props)=>props.isVisible?"0px":"-300px"};
+    width:300px;
+    background-color: var(--blue);
+    height: 100vh;
+    z-index: 100;
+    transition: right 0.3s;
+`
 
 const CartItem= styled.div``
 

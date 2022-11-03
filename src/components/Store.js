@@ -3,18 +3,6 @@ import {useState} from "react";
 
 function Store() {
 
-  // State to store the array of the cat items 
-  const [catInventory, setCatInventory] = useState([])
-
-
-  // Fetch the cat data
-
-  // Push each cat to the cat Inventory
-  
-
-
-
-
 
 
   // Will be used to render componants => either inventory or inventory + basket modal 

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Navbar from "./components/Navbar";
 import './App.css';
 import Footer from './components/Footer';
@@ -41,7 +40,7 @@ getCats()
     <div >
     <Navbar basketQuanity={basketQuanity}></Navbar>
     <Home></Home>
-    <Catcard catsdata={cats}></Catcard>
+    {/* <Catcard catsdata={cats}></Catcard> */}
     <Footer></Footer>
     </div>
   );

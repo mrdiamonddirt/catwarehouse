@@ -1,14 +1,15 @@
+import { useState } from "react";
 import Navbar from "./components/Navbar";
 import './App.css';
 import Footer from './components/Footer';
-import {Home} from './components/Home'
+import Catcard from './components/Catcard';
+import {Home} from './components/Home';
 import { useEffect , useState } from "react";
 import { faker } from "@faker-js/faker";
 
 
 function App() {
 const [cats, setCats] = useState([])
-
 // useEffect for calling api
 useEffect(() => {
 async function getCats() {
@@ -29,11 +30,18 @@ try {
 getCats() 
 }, [])
 
-  return (
+  // State to store the array of the basket 
+  // Needed here so we can pass the data to both the header and the main section
+  const [basket, setBasket] = useState([{}, {}])
 
+  // Calculate the amount of items in the basket
+  let basketQuanity = basket.length;
+
+  return (
     <div >
-    <Navbar></Navbar>
+    <Navbar basketQuanity={basketQuanity}></Navbar>
     <Home></Home>
+    <Catcard catsdata={cats}></Catcard>
     <Footer></Footer>
     </div>
   );

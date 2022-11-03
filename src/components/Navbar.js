@@ -18,7 +18,7 @@ const NavBarWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: lightblue;
+    background-color: var(--lightBlue);
     padding: 20px;
 `;
 
@@ -30,7 +30,7 @@ const MainLogo = styled.button`
     background-color: transparent;
     
     &:hover{
-        background-color: aqua;
+        transform: scale(1.2);
     }
     img{
         height: 100%;
@@ -45,7 +45,7 @@ const MidLogo = styled.button`
     background-color: transparent;
     
     &:hover{
-        background-color: aqua;
+        transform: scale(1.2);
     }
     img{
         height: 80px;
@@ -61,7 +61,10 @@ display: flex;
     background-color: transparent;
     
     &:hover{
-        background-color: aqua;
+        transform: scale(1.2);
+        p{
+        transform: scale(1.2) translate(-15px, 20px);
+    }
     }
     img{
         height: 50px;
@@ -72,7 +75,7 @@ display: flex;
 const BasketCounter = styled.p`
 position: relative;
 color: white;
-background-color: red;
+background-color: var(--red);
 height: 15px;
 width: 15px;
 border-radius: 50%;

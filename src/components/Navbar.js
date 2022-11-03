@@ -2,12 +2,15 @@ import styled from "styled-components";
 import basket from '../assets/images/basket.png'
 import catmidlogo from '../assets/images/catmidlogo.png'
 import Cats4Lyf from '../assets/images/Cats4Lyf.png'
+import { useState } from "react";
 
 const Navbar = () => {
+
+    // const[displayCart, setDisplayCart] = useState(false)
     return(
         <NavBarWrapper>
         <MainLogo><img alt="Logo" src={Cats4Lyf}></img></MainLogo>
-        <MidLogo><img alt="MidLogo" src={catmidlogo}></img></MidLogo>
+        <MidLogo><img alt="MidLogo" src={catmidlogo} onClick=""></img></MidLogo>
         <Basket><img alt="BasketImg" src={basket}></img><BasketCounter>9</BasketCounter></Basket>
        </NavBarWrapper>
     )

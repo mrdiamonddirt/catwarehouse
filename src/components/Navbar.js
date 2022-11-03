@@ -20,6 +20,7 @@ const NavBarWrapper = styled.div`
     align-items: center;
     background-color: var(--lightBlue);
     padding: 20px;
+    height:10vh;
 `;
 
 const MainLogo = styled.button`

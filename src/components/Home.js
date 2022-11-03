@@ -28,15 +28,20 @@ const HomeWrapper = styled.div`
     align-items: center;
     flex-direction: column;
     flex-wrap:wrap;
-    background-color: #F1FAEE;
-    height: 100vh;
+    background-color: var(--cream);
+    height: 85vh;
+    font-family: var(--fontSerif);
+    @media screen {
+        
+    }
 `
 const Header = styled.h1`
-    
+    padding-top: 50px;
+    font-size: 40px;
 
 `
 const Paragraph = styled.p`
-    margin-top: 100px;
+    margin-top: 30px;
     padding-left: 300px;
     padding-right: 300px;
     font-size: 26px;
@@ -44,12 +49,13 @@ const Paragraph = styled.p`
 const Button = styled.button`
     margin-top: 50px;
     border-radius: 50px;
-    background-color: #1D3557;
-    color: #F1FAEE;
+    background-color: var(--darkBlue);
+    color: var(--white);
     padding-left: 40px;
     padding-right: 40px;
     padding-top:20px;
     padding-bottom: 20px;
     font-size: 25px;
     font-weight: bold;
+    font-family: var(--fontSerif);
 `

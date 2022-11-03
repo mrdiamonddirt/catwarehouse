@@ -2,7 +2,7 @@ import styled from "styled-components";
 import basket from '../assets/images/basket.png'
 import catmidlogo from '../assets/images/catmidlogo.png'
 import Cats4Lyf from '../assets/images/Cats4Lyf.png'
-import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = (props) => {
     return(

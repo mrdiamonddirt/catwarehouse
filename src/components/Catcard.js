@@ -8,7 +8,7 @@ const Catcard = (props) => {
         <CatcardWrapper>{props.catsdata.map((catObject) => {
             return(
                 <div className='cat'>
-                <img src={catObject.catimage}></img>
+                <img alt='catimage' src={catObject.catimage}></img>
                 <p>{catObject.catid}</p>
                 <p>£{catObject.price}</p>
                 </div>            

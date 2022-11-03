@@ -7,6 +7,9 @@ export const Cart= (props)=>{
     // Sets the basket data from the props
     let basketData = props.basket;
 
+    // Create variable for total price
+    let totalPrice = 0;
+
     // Function to calculate the total price
     function totalPriceFunc (basketData){
         // Map over the basketData and get all of the prices 
@@ -15,7 +18,7 @@ export const Cart= (props)=>{
         })
 
         // Add all of the prices
-        let totalPrice = allPrices.reduce((accumulator, value) => {
+        totalPrice = allPrices.reduce((accumulator, value) => {
             return accumulator + value;
         }, 0);
         // Return the price 

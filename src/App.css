@@ -11,3 +11,30 @@
   --fontSerif: 'Patrick Hand', cursive;
   --fontSansSerif: 'Montserrat', sans-serif;
 }
+
+/* ---------------- BODY COMPONENTS ------------ */
+
+body{
+  margin: 0;
+}
+
+
+
+/* ---------------- FOOTER ------------ */
+.footer {
+  align-items: center;
+  background-color: var(--lightBlue);
+  bottom: 0;
+  display: flex;
+  height: 5vh;
+  justify-content: center;
+  position: absolute;
+  width: 100vw;
+}
+
+.footer p{
+  color: var(--black);
+  font-family: var(--fontSerif);
+  margin: 0;
+  text-align: center;
+}

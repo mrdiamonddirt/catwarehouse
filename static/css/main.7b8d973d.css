@@ -1,0 +1,2 @@
+:root{--lightBlue:#a8dadc;--blue:#457b9d;--darkBlue:#1d3557;--red:#e63946;--cream:#f1faee;--black:#000;--white:#fff;--fontSerif:"Patrick Hand",cursive;--fontSansSerif:"Montserrat",sans-serif}body{margin:0}.footer{align-items:center;background-color:#a8dadc;background-color:var(--lightBlue);bottom:0;display:flex;height:5vh;justify-content:center;position:absolute;width:100vw}.footer p{color:#000;color:var(--black);font-family:Patrick Hand,cursive;font-family:var(--fontSerif);margin:0;text-align:center}
+/*# sourceMappingURL=main.7b8d973d.css.map*/

@@ -25,16 +25,16 @@ body{
   align-items: center;
   background-color: var(--lightBlue);
   bottom: 0;
-  color:black;
   display: flex;
-  font-family: var(--fontSerif);
   height: 5vh;
   justify-content: center;
   position: absolute;
-  text-align: center;
   width: 100vw;
 }
 
 .footer p{
+  color: var(--black);
+  font-family: var(--fontSerif);
   margin: 0;
+  text-align: center;
 }

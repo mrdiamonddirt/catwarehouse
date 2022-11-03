@@ -2,14 +2,14 @@ import { useState } from "react";
 import Navbar from "./components/Navbar";
 import './App.css';
 import Footer from './components/Footer';
-import {Home} from './components/Home'
+import Catcard from './components/Catcard';
+import {Home} from './components/Home';
 import { useEffect , useState } from "react";
 import { faker } from "@faker-js/faker";
 
 
 function App() {
 const [cats, setCats] = useState([])
-
 // useEffect for calling api
 useEffect(() => {
 async function getCats() {
@@ -38,10 +38,10 @@ getCats()
   let basketQuanity = basket.length;
 
   return (
-
     <div >
     <Navbar basketQuanity={basketQuanity}></Navbar>
     <Home></Home>
+    <Catcard catsdata={cats}></Catcard>
     <Footer></Footer>
     </div>
   );

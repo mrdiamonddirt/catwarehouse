@@ -13,7 +13,7 @@ function Footer() {
     <div>
       <footer className="footer">
         <div className="footer-container">
-          <a>&copy; {companyName} {currentYear}</a>
+          <p>&copy; {companyName} {currentYear}</p>
         </div>
       </footer>
     </div>

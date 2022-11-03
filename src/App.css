@@ -12,18 +12,29 @@
   --fontSansSerif: 'Montserrat', sans-serif;
 }
 
+/* ---------------- BODY COMPONENTS ------------ */
+
+body{
+  margin: 0;
+}
+
+
 
 /* ---------------- FOOTER ------------ */
 .footer {
   align-items: center;
   background-color: var(--lightBlue);
+  bottom: 0;
   color:black;
   display: flex;
-  font-size: 0.75rem;
+  font-family: var(--fontSerif);
   height: 5vh;
   justify-content: center;
-
+  position: absolute;
   text-align: center;
   width: 100vw;
 }
 
+.footer p{
+  margin: 0;
+}

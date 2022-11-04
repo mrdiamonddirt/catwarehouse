@@ -52,7 +52,7 @@ const CartWrapper= styled.div`
     position: fixed;
     top: calc(10vh + 40px);
     right: ${(props)=>props.isVisible?"0px":"-300px"};
-    width:300px;
+    width:25%;
     background-color: var(--blue);
     height: 100vh;
     z-index: 100;

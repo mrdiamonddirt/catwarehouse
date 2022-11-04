@@ -3,6 +3,7 @@ import './App.css';
 import Footer from './components/Footer';
 import {Cart} from './components/Cart';
 import Catcard from './components/Catcard';
+import Store from "./components/Store";
 import {Home} from './components/Home';
 import { useEffect , useState } from "react";
 import { faker } from "@faker-js/faker";
@@ -24,6 +25,7 @@ async function getCats() {
 try {
   const catData = await fetch('https://api.thecatapi.com/v1/images/search?limit=10')
   const newdata = await catData.json()
+  console.log(newdata)
   const catArray = newdata.map((cat) => {
     return{
             catname: faker.name.fullName(),
@@ -58,11 +60,8 @@ getCats()
     <Navbar showCart={openCart} basketQuanity={basketQuanity}></Navbar>
     <Routes>
     <Route path='catwarehouse/'element={<Home></Home>} /> 
-    <Route path='/Catcard' element={ 
-    <Catcard catsdata={cats} catInformation={addToCart}></Catcard> } /> 
+    <Route path='/Catcard' element={ <Store cats={cats} displayCart={displayCart} basket={basket}></Store> } /> 
     </Routes>
-    <Cart isVisible={displayCart} basket={basket}></Cart>
-
     <Footer></Footer>
     </BrowserRouter>
     </>

@@ -12,8 +12,8 @@ const Catcard = (props) => {
             return(
                 <div className='cat' onClick={()=>props.catInformation(catObject)}>
                 <img alt='catimage' src={catObject.catimage}></img>
-                <p>{catObject.catid}</p>
-                <p>£{catObject.price}</p>
+                <p className='cat-name'>{catObject.catname}</p>
+                <p className='cat-price'>£{catObject.price}</p>
                 </div>           
                 )
         })}</CatcardWrapper>
@@ -29,18 +29,26 @@ display:flex;
 justify-content: center;
 align-items: center;
 text-align: center;
-/* background-color: aqua; */
+flex-wrap: wrap;
 height: 80vh;
 .cat{
     flex-direction: column;
-    margin: 5px;
+    margin: 1%;
     padding: 2px;
-    border: 1px solid black;
     border-radius: 5px;
-
+    height: 250px;
+    width:200px;
+    overflow: hidden;
 }
+
+.cat:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+
 img{
     border-radius: 5px;
-    height: 100px;
+    height: 70%;
+    min-width:50%
 }
 `

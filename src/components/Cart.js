@@ -34,6 +34,7 @@ useEffect(() => {
     return(
         
         <CartWrapper isVisible={props.isVisible}>
+            <div>
             <h1>Your cart:</h1>
             {props.basket.map((catItem)=>{
                 return(
@@ -49,11 +50,13 @@ useEffect(() => {
     
                 )
             })}
-           
+            </div>
+           <div>
             <CartTotal isVisible={props.isVisible}>
                 <h3>Total price:</h3>
                 <h4>{`£ ${totalPrice}`}</h4>
             </CartTotal>
+            </div>
         </CartWrapper>
     )
 }
@@ -68,6 +71,8 @@ const CartWrapper= styled.div`
     padding: 2%;
     height: 100vh;
     z-index: 100;
+    display: flex;
+    flex-direction: column;
     transition: right 0.3s;
     h1{
         color:var(--white);
@@ -83,6 +88,7 @@ const CartItem= styled.div`
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
+    overflow: scroll;
     padding-left: 20px;
     padding-right: 20px;
     border-bottom: 2px solid black;

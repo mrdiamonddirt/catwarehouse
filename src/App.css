@@ -28,7 +28,6 @@ body{
 }
 
 #section-catInventory{
-  background-color: red;
   font-family: var(--fontSansSerif);
   margin-right: 2%;
   letter-spacing: 0.22rem;
@@ -49,7 +48,6 @@ body{
 }
 
 #section-basket{
-  background-color: blue;
   margin-left: 3%;
   width: 25vw;
 }

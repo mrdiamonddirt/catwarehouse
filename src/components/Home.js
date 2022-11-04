@@ -16,7 +16,7 @@ export const Home = () => {
                 publishing software like Aldus PageMaker including versions of Lorem Ipsum.
             </Paragraph>
 
-            <Link to="/Catcard"><Button>Enter Store</Button></Link>
+            <Link to="/Catcard"><Button >Enter Store</Button></Link>
         </HomeWrapper>
     )
 }
@@ -58,4 +58,10 @@ const Button = styled.button`
     font-size: 25px;
     font-weight: bold;
     font-family: var(--fontSerif);
+
+    &:hover{
+        cursor: pointer;
+        color: var(--darkBlue);
+    }
+
 `

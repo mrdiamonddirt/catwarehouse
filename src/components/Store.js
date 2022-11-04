@@ -13,7 +13,6 @@ function Store(props) {
         <Catcard catInformation={props.addToCart} catsdata={props.cats}></Catcard>
       </div>
       <div style={ props.displayCart ? { display:'block'} : {display : 'none'} }   id="section-basket">
-        <p>Cart goes here!</p>
         <Cart basket={props.basket} isVisible={props.displayCart}></Cart>
       </div>
     </div>

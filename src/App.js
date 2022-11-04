@@ -59,12 +59,10 @@ getCats()
     <BrowserRouter>
     <Navbar showCart={openCart} basketQuanity={basketQuanity}></Navbar>
     <Routes>
-    <Route path='catwarehouse/'element={<Home></Home>} /> 
+    <Route path='catwarehouse/'element={<Home displayCart={displayCart} basket={basket}></Home>} /> 
     <Route path='/Catcard' element={ <Store addToCart={addToCart} cats={cats} displayCart={displayCart} basket={basket}></Store> } /> 
     </Routes>
-    <div style={ displayCart ? { display:'block'} : {display : 'none'} }   id="section-basket">
-        <Cart basket={basket} isVisible={displayCart}></Cart>
-      </div>
+    
     <Footer></Footer>
     </BrowserRouter>
     </>

@@ -34,11 +34,14 @@ useEffect(() => {
     return(
         
         <CartWrapper isVisible={props.isVisible}>
+            <div>
             <h1>Your cart:</h1>
             {props.basket.map((catItem)=>{
                 return(
                     <CartItem >
-                    <img src={catItem.catimage}></img>
+                        <div>
+                        <img src={catItem.catimage}></img>
+                        </div>
                     <CartInfo>
                     <h2>{catItem.catname}</h2>
                     <p>{`£ ${catItem.price}`}</p>
@@ -47,11 +50,13 @@ useEffect(() => {
     
                 )
             })}
-           
+            </div>
+           <div>
             <CartTotal isVisible={props.isVisible}>
                 <h3>Total price:</h3>
                 <h4>{`£ ${totalPrice}`}</h4>
             </CartTotal>
+            </div>
         </CartWrapper>
     )
 }
@@ -63,19 +68,27 @@ const CartWrapper= styled.div`
     right: ${(props)=>props.isVisible?"0px":"-300px"};
     width:25%;
     background-color: var(--blue);
+    padding: 2%;
     height: 100vh;
     z-index: 100;
+    display: flex;
+    flex-direction: column;
     transition: right 0.3s;
     h1{
         color:var(--white);
-        padding-left: 150px;
+        text-align: center;
         font-weight: bold;
+        font-family :var(--fontSansSerif) ;
     }
 `
 
 const CartItem= styled.div`
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: scroll;
     padding-left: 20px;
     padding-right: 20px;
     border-bottom: 2px solid black;
@@ -104,18 +117,19 @@ const CartTotal= styled.div`
     justify-content: space-between;
     background-color: var(--darkBlue);
     width: 25%;
-    height: 5vh;
+    height: 7vh;
     bottom: 0;
      h3{  
-        padding-left: 20px; 
+        padding-left: 5%; 
         font-family :var(--fontSansSerif) ;
         font-weight: bold;
         color: var(--white);
     }
     h4{
         letter-spacing: 4px;
+        font-family :var(--fontSansSerif) ;
         color: var(--red);
-        padding-right: 20px;
+        padding-right: 5%;
     }
 
 `

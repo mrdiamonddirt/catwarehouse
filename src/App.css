@@ -16,20 +16,36 @@
 
 body{
   margin: 0;
+  background-color: var(--cream);
 }
 
 
+#section-home{
+  font-family: var(--fontSansSerif);
+  flex-grow: 2;
+  width: 71vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 0 5% 0 5%;
+}
 
 /* ---------------- STORE ------------ */
 
 #section-store{
   display: flex;
   background-color: var(--cream);
+  padding-bottom: 10%;
+  min-height: 80vh;
 }
 
 #section-catInventory{
   font-family: var(--fontSansSerif);
+  margin-right: 2%;
   letter-spacing: 0.22rem;
+  flex-grow: 2;
+  width: 71vw;
 }
 
 .cat-name{
@@ -44,8 +60,9 @@ body{
   margin: 5% 0;
 }
 
-#section-basket{
-  width: 40vw;
+.section-basket{
+  margin-left: 3%;
+  width: 25vw;
 }
 
 
@@ -57,7 +74,8 @@ body{
   display: flex;
   height: 5vh;
   justify-content: center;
-  position: absolute;
+  margin-top: 5%;
+  position: fixed;
   width: 100vw;
 }
 

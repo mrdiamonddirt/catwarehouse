@@ -1,22 +1,30 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { Cart } from "./Cart";
 
 
-export const Home = () => {
+export const Home = (props) => {
 
     return (
         <HomeWrapper>
+
+            <div id="section-home">
             <Header>Welcome to Cats4Lyf!</Header>
 
-            <Paragraph>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-                publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            </Paragraph>
+            <Paragraph> Would you like an adorable new best friend? Well then, you've come to the right place!</Paragraph>
+            <Paragraph>Here at Cats4Lyf, we have a wide selection of friendly, fluffy cats, ready to take home today.</Paragraph>
+            <Paragraph>Simply enter the store choose your perfect pet!</Paragraph>
+
 
             <Link to="/Catcard"><Button >Enter Store</Button></Link>
+            </div>
+
+            <div style={ props.displayCart ? { display:'block'} : {display : 'none'} }   class="section-basket">
+
+                 <Cart basket={props.basket} isVisible={props.displayCart}></Cart>
+            </div>
+
         </HomeWrapper>
     )
 }
@@ -26,28 +34,26 @@ const HomeWrapper = styled.div`
    
     display: flex;
     align-items: center;
-    flex-direction: column;
-    flex-wrap:wrap;
+    flex-direction: row;
     background-color: var(--cream);
     height: 85vh;
     font-family: var(--fontSerif);
-    @media screen {
-        
-    }
+
 `
 const Header = styled.h1`
-    padding-top: 50px;
+    margin: 0 0 1% 0;
     font-size: 40px;
+    text-align: center;
 
 `
 const Paragraph = styled.p`
     margin-top: 30px;
-    padding-left: 300px;
-    padding-right: 300px;
     font-size: 26px;
 `
 const Button = styled.button`
     margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 50px;
     background-color: var(--darkBlue);
     color: var(--white);
@@ -61,7 +67,7 @@ const Button = styled.button`
 
     &:hover{
         cursor: pointer;
-        color: var(--darkBlue);
+        color: var(--lightBlue);
     }
 
 `

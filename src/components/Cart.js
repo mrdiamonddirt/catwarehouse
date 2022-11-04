@@ -24,27 +24,12 @@ useEffect(() => {
             return accumulator + value;
         }, 0);
         // set the total Price 
-        console.log(priceAdd)
         setTotalPrice(priceAdd)
     } 
     totalPriceFunc(basketData)
     // setTotalPrice(totalPriceFunc(basketData))
 }, [basketData])
 
-    // // Function to calculate the total price
-    // function totalPriceFunc (basketData){
-    //     // Map over the basketData and get all of the prices 
-    //     let allPrices = basketData.map(cat => {
-    //         return cat.price
-    //     })
-
-    //     // Add all of the prices
-    //     totalPrice = allPrices.reduce((accumulator, value) => {
-    //         return accumulator + value;
-    //     }, 0);
-    //     // Return the price 
-    //     return totalPrice;
-    // }
 
     return(
         

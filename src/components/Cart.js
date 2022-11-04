@@ -1,9 +1,11 @@
 import React from "react";
-import { useEffect , useState} from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
+import DeleteIcon from '@mui/icons-material/Delete';
 
 
-export const Cart= (props)=>{
+
+export const Cart = (props) => {
 
     // Sets the basket data from the props
     let basketData = props.basket;
@@ -12,42 +14,45 @@ export const Cart= (props)=>{
     const [totalPrice, setTotalPrice] = useState(0)
 
     // useEffect for calling api
-useEffect(() => {
-    async function totalPriceFunc(basketData) {
-        // Map over the basketData and get all of the prices 
-        let allPrices = basketData.map(cat => {
-            return Number(cat.price)
-        })
+    useEffect(() => {
+        async function totalPriceFunc(basketData) {
+            // Map over the basketData and get all of the prices 
+            let allPrices = basketData.map(cat => {
+                return Number(cat.price)
+            })
 
-        // Add all of the prices
-        let priceAdd = allPrices.reduce((accumulator, value) => {
-            return accumulator + value;
-        }, 0);
-        // set the total Price 
-        setTotalPrice(priceAdd)
-    } 
-    totalPriceFunc(basketData)
-    // setTotalPrice(totalPriceFunc(basketData))
-}, [basketData])
+            // Add all of the prices
+            let priceAdd = allPrices.reduce((accumulator, value) => {
+                return accumulator + value;
+            }, 0);
+            // set the total Price 
+            setTotalPrice(priceAdd)
+        }
+        totalPriceFunc(basketData)
+        // setTotalPrice(totalPriceFunc(basketData))
+    }, [basketData])
 
 
-    return(
-        
+    return (
+
         <CartWrapper isVisible={props.isVisible}>
             <h1>Your cart:</h1>
-            {props.basket.map((catItem)=>{
-                return(
+            {props.basket.length > 0 && (<button onClick={props.clear}>Clear All</button>
+            )}
+            {props.basket.map((catItem, index) => {
+                return (
                     <CartItem >
-                    <img src={catItem.catimage}></img>
-                    <CartInfo>
-                    <h2>{catItem.catname}</h2>
-                    <p>{`£ ${catItem.price}`}</p>
-                    </CartInfo>
-                </CartItem>
-    
+                        <img src={catItem.catimage}></img>
+                        <CartInfo>
+                            <i onClick={() => props.remove(index)}><DeleteIcon /></i>
+                            <h2>{catItem.catname}</h2>
+                            <p>{`£ ${catItem.price}`}</p>
+                        </CartInfo>
+                    </CartItem>
+
                 )
             })}
-           
+
             <CartTotal isVisible={props.isVisible}>
                 <h3>Total price:</h3>
                 <h4>{`£ ${totalPrice}`}</h4>
@@ -56,11 +61,11 @@ useEffect(() => {
     )
 }
 
-const CartWrapper= styled.div`
+const CartWrapper = styled.div`
     position: fixed;
     overflow: scroll;
     top: calc(10vh + 40px);
-    right: ${(props)=>props.isVisible?"0px":"-300px"};
+    right: ${(props) => props.isVisible ? "0px" : "-300px"};
     width:25%;
     background-color: var(--blue);
     height: 100vh;
@@ -71,32 +76,53 @@ const CartWrapper= styled.div`
         padding-left: 150px;
         font-weight: bold;
     }
+
+    button{
+        margin: 20px;
+        font-family :var(--fontSansSerif) ;
+        font-weight: bold;
+
+        &:hover{
+            cursor: pointer;
+            background-color: aliceblue;
+            }
+    }
 `
 
-const CartItem= styled.div`
+const CartItem = styled.div`
     display: flex;
     align-items: center;
     padding-left: 20px;
     padding-right: 20px;
     border-bottom: 2px solid black;
     margin-bottom: 20px;
+
     img{
         height: 100px;
         width: 100px;
         padding-bottom: 10px;
     };
 `
-const CartInfo= styled.div`
+const CartInfo = styled.div`
     h2,p{
         color: var(--black);
         padding-left: 30px; 
         font-family :var(--fontSansSerif) ;
         font-weight: bold;
     }
+    i{
+        position: absolute;
+        right: 0;
+        padding-right: 10px;
+
+        &:hover{
+        cursor: pointer;
+    }
+    }
 
 `
 
-const CartTotal= styled.div`
+const CartTotal = styled.div`
     position: fixed;
     display: flex;
     flex-direction: row;

@@ -23,18 +23,28 @@ body{
 /* ---------------- STORE ------------ */
 
 #section-store{
-  background-color: red;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: var(--cream);
 }
 
 #section-catInventory{
-  background-color: green;
+  font-family: var(--fontSansSerif);
+  letter-spacing: 0.22rem;
+}
+
+.cat-name{
+  color: var(--red);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 3% 0;
+}
+.cat-price{
+  color: var(--blue);
+  font-size: 1rem;
+  margin: 5% 0;
 }
 
 #section-basket{
-  background-color: orange;
   width: 40%;
 }
 

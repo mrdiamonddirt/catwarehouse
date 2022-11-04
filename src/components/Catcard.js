@@ -2,13 +2,15 @@ import styled from 'styled-components';
 
 const Catcard = (props) => {
     console.log(props.catsdata)
+    
     // renders each cat and passes props to each
     return(
         <>
+        
         <div className='CatCards'>
         <CatcardWrapper >{props.catsdata.map((catObject) => {
             return(
-                <div className='cat'>
+                <div className='cat' onClick={()=>props.catInformation(catObject)}>
                 <img alt='catimage' src={catObject.catimage}></img>
                 <p className='cat-name'>{catObject.catname}</p>
                 <p className='cat-price'>£{catObject.price}</p>

@@ -29,12 +29,17 @@ export const Cart= (props)=>{
         
         <CartWrapper isVisible={props.isVisible}>
             <h1>Your cart:</h1>
-            <CartItem>
-                <img></img>
-                <h2>CatName</h2>
-                <p>catprice</p>
-            </CartItem>
-
+            {props.basket.map((catItem)=>{
+                return(
+                    <CartItem >
+                    <img src={catItem.catimage}></img>
+                    <h2>{catItem.catname}</h2>
+                    <p>{catItem.price}</p>
+                </CartItem>
+    
+                )
+            })}
+           
             <CartTotal>
                 <p>Total price:</p>
                 <h2>{totalPrice}</h2>

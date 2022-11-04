@@ -15,6 +15,9 @@ const[displayCart, setDisplayCart] = useState(false)
   const openCart = ()=>{
     setDisplayCart(!displayCart)
   }
+
+  
+
 const [cats, setCats] = useState([])
 // useEffect for calling api
 useEffect(() => {
@@ -25,7 +28,7 @@ try {
   console.log(newdata)
   const catArray = newdata.map((cat) => {
     return{
-            catid: cat.id,
+            catname: faker.name.fullName(),
             catimage: cat.url,
             price: faker.commerce.price(100, 200),
           };
@@ -39,7 +42,14 @@ getCats()
 
   // State to store the array of the basket 
   // Needed here so we can pass the data to both the header and the main section
-  const [basket, setBasket] = useState([{}, {}])
+  const [basket, setBasket] = useState([])
+
+  const addToCart= (catInfo)=>{
+    let catData =[...basket]
+    catData.push(catInfo)
+    setBasket(catData)
+  }
+
 
   // Calculate the amount of items in the basket
   let basketQuanity = basket.length;
@@ -50,10 +60,8 @@ getCats()
     <Navbar showCart={openCart} basketQuanity={basketQuanity}></Navbar>
     <Routes>
     <Route path='catwarehouse/'element={<Home></Home>} /> 
-    <Route path='/Catcard' element={ <Store cats={cats} displayCart={displayCart}></Store> } /> 
+    <Route path='/Catcard' element={ <Store cats={cats} displayCart={displayCart} basket={basket}></Store> } /> 
     </Routes>
-    
-
     <Footer></Footer>
     </BrowserRouter>
     </>

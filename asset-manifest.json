@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/catwarehouse/static/css/main.7b8d973d.css",
-    "main.js": "/catwarehouse/static/js/main.78b49341.js",
+    "main.css": "/catwarehouse/static/css/main.5be79982.css",
+    "main.js": "/catwarehouse/static/js/main.e7267cfa.js",
     "index.html": "/catwarehouse/index.html",
-    "main.7b8d973d.css.map": "/catwarehouse/static/css/main.7b8d973d.css.map",
-    "main.78b49341.js.map": "/catwarehouse/static/js/main.78b49341.js.map"
+    "main.5be79982.css.map": "/catwarehouse/static/css/main.5be79982.css.map",
+    "main.e7267cfa.js.map": "/catwarehouse/static/js/main.e7267cfa.js.map"
   },
   "entrypoints": [
-    "static/css/main.7b8d973d.css",
-    "static/js/main.78b49341.js"
+    "static/css/main.5be79982.css",
+    "static/js/main.e7267cfa.js"
   ]
 }

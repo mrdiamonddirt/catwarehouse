@@ -1,56 +1,65 @@
 import Navbar from "./components/Navbar";
 import './App.css';
 import Footer from './components/Footer';
-import {Cart} from './components/Cart';
+import { Cart } from './components/Cart';
 import Catcard from './components/Catcard';
 import Store from "./components/Store";
-import {Home} from './components/Home';
-import { useEffect , useState } from "react";
+import { Home } from './components/Home';
+import { useEffect, useState } from "react";
 import { faker } from "@faker-js/faker";
-import { BrowserRouter, Routes, Route, Link} from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 
 function App() {
-const[displayCart, setDisplayCart] = useState(false)
+  const [displayCart, setDisplayCart] = useState(false)
 
-  const openCart = ()=>{
+  const openCart = () => {
     setDisplayCart(!displayCart)
   }
 
-  
 
-const [cats, setCats] = useState([])
-// useEffect for calling api
-useEffect(() => {
-async function getCats() {
-try {
-  const catData = await fetch('https://api.thecatapi.com/v1/images/search?limit=10')
-  const newdata = await catData.json()
-  console.log(newdata)
-  const catArray = newdata.map((cat) => {
-    return{
+
+  const [cats, setCats] = useState([])
+  // useEffect for calling api
+  useEffect(() => {
+    async function getCats() {
+      try {
+        const catData = await fetch('https://api.thecatapi.com/v1/images/search?limit=10')
+        const newdata = await catData.json()
+        console.log(newdata)
+        const catArray = newdata.map((cat) => {
+          return {
             catname: faker.name.fullName(),
             catimage: cat.url,
             price: faker.commerce.price(100, 200),
           };
-  })
-  setCats(catArray)
-} catch (error) {
-  
-}} 
-getCats() 
-}, [])
+        })
+        setCats(catArray)
+      } catch (error) {
+
+      }
+    }
+    getCats()
+  }, [])
 
   // State to store the array of the basket 
   // Needed here so we can pass the data to both the header and the main section
   const [basket, setBasket] = useState([])
 
-  const addToCart= (catInfo)=>{
-    let catData =[...basket]
+  const addToCart = (catInfo) => {
+    let catData = [...basket]
     catData.push(catInfo)
     setBasket(catData)
   }
 
+  const removeCart = (index) => {
+    let catData = [...basket]
+    catData.splice(index, 1)
+    setBasket(catData)
+  }
 
+  const clearAll = () => {
+    setBasket([])
+  }
   // Calculate the amount of items in the basket
   let basketQuanity = basket.length;
 

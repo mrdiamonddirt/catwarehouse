@@ -69,14 +69,14 @@ export const Cart = (props) => {
 }
 
 const CartWrapper = styled.div`
-    position: fixed;
+    position: relative;
     overflow: scroll;
-    top: calc(10vh + 40px);
+    /* top: calc(10vh + 40px); */
     right: ${(props) => props.isVisible ? "0px" : "-300px"};
-    width:25%;
+    width:95%;
     background-color: var(--blue);
     padding: 2%;
-    height: 100vh;
+    min-height: 78vh;
     z-index: 100;
     display: flex;
     flex-direction: column;
@@ -138,13 +138,13 @@ const CartInfo = styled.div`
 `
 
 const CartTotal = styled.div`
-    position: fixed;
+    position: absolute;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     background-color: var(--darkBlue);
-    width: 25%;
+    width: 95%;
     height: 7vh;
     bottom: 0;
      h3{  

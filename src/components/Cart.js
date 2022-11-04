@@ -111,18 +111,19 @@ const CartTotal= styled.div`
     justify-content: space-between;
     background-color: var(--darkBlue);
     width: 25%;
-    height: 5vh;
+    height: 7vh;
     bottom: 0;
      h3{  
-        padding-left: 20px; 
+        padding-left: 5%; 
         font-family :var(--fontSansSerif) ;
         font-weight: bold;
         color: var(--white);
     }
     h4{
         letter-spacing: 4px;
+        font-family :var(--fontSansSerif) ;
         color: var(--red);
-        padding-right: 20px;
+        padding-right: 5%;
     }
 
 `

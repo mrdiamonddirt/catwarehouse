@@ -8,6 +8,8 @@ export const Home = (props) => {
 
     return (
         <HomeWrapper>
+
+            <div id="section-home">
             <Header>Welcome to Cats4Lyf!</Header>
 
             <Paragraph>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
@@ -18,8 +20,10 @@ export const Home = (props) => {
             </Paragraph>
 
             <Link to="/Catcard"><Button >Enter Store</Button></Link>
+            </div>
 
-            <div style={ props.displayCart ? { display:'block'} : {display : 'none'} }   id="section-basket">
+            <div style={ props.displayCart ? { display:'block'} : {display : 'none'} }   class="section-basket">
+
                  <Cart basket={props.basket} isVisible={props.displayCart}></Cart>
             </div>
 
@@ -32,28 +36,26 @@ const HomeWrapper = styled.div`
    
     display: flex;
     align-items: center;
-    flex-direction: column;
-    flex-wrap:wrap;
+    flex-direction: row;
     background-color: var(--cream);
     height: 85vh;
     font-family: var(--fontSerif);
-    @media screen {
-        
-    }
+
 `
 const Header = styled.h1`
-    padding-top: 50px;
+    margin: 0 0 1% 0;
     font-size: 40px;
+    text-align: center;
 
 `
 const Paragraph = styled.p`
     margin-top: 30px;
-    padding-left: 300px;
-    padding-right: 300px;
     font-size: 26px;
 `
 const Button = styled.button`
     margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 50px;
     background-color: var(--darkBlue);
     color: var(--white);

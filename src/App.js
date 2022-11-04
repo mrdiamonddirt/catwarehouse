@@ -22,6 +22,7 @@ async function getCats() {
 try {
   const catData = await fetch('https://api.thecatapi.com/v1/images/search?limit=10')
   const newdata = await catData.json()
+  console.log(newdata)
   const catArray = newdata.map((cat) => {
     return{
             catid: cat.id,

@@ -38,7 +38,9 @@ useEffect(() => {
             {props.basket.map((catItem)=>{
                 return(
                     <CartItem >
-                    <img src={catItem.catimage}></img>
+                        <div>
+                        <img src={catItem.catimage}></img>
+                        </div>
                     <CartInfo>
                     <h2>{catItem.catname}</h2>
                     <p>{`£ ${catItem.price}`}</p>
@@ -63,19 +65,24 @@ const CartWrapper= styled.div`
     right: ${(props)=>props.isVisible?"0px":"-300px"};
     width:25%;
     background-color: var(--blue);
+    padding: 2%;
     height: 100vh;
     z-index: 100;
     transition: right 0.3s;
     h1{
         color:var(--white);
-        padding-left: 150px;
+        text-align: center;
         font-weight: bold;
+        font-family :var(--fontSansSerif) ;
     }
 `
 
 const CartItem= styled.div`
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
     padding-left: 20px;
     padding-right: 20px;
     border-bottom: 2px solid black;

@@ -28,8 +28,12 @@ body{
 }
 
 #section-catInventory{
+  background-color: red;
   font-family: var(--fontSansSerif);
+  margin-right: 2%;
   letter-spacing: 0.22rem;
+  flex-grow: 2;
+  width: 71vw;
 }
 
 .cat-name{
@@ -45,7 +49,9 @@ body{
 }
 
 #section-basket{
-  width: 40vw;
+  background-color: blue;
+  margin-left: 3%;
+  width: 25vw;
 }
 
 

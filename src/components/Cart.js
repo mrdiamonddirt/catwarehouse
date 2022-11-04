@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect , useState} from "react";
 import styled from "styled-components";
 
 
@@ -8,22 +9,42 @@ export const Cart= (props)=>{
     let basketData = props.basket;
 
     // Create variable for total price
-    let totalPrice = 0;
+    const [totalPrice, setTotalPrice] = useState(0)
 
-    // Function to calculate the total price
-    function totalPriceFunc (basketData){
+    // useEffect for calling api
+useEffect(() => {
+    async function totalPriceFunc(basketData) {
         // Map over the basketData and get all of the prices 
         let allPrices = basketData.map(cat => {
-            return cat.price
+            // console.log(typeof(cat.price))
+            return Number(cat.price)
         })
 
         // Add all of the prices
-        totalPrice = allPrices.reduce((accumulator, value) => {
+        let priceAdd = allPrices.reduce((accumulator, value) => {
             return accumulator + value;
         }, 0);
-        // Return the price 
-        return totalPrice;
-    }
+        // set the total Price 
+        return priceAdd;
+    } 
+    totalPriceFunc(basketData)
+    console.log(totalPriceFunc(basketData))
+    }, [basketData])
+
+    // // Function to calculate the total price
+    // function totalPriceFunc (basketData){
+    //     // Map over the basketData and get all of the prices 
+    //     let allPrices = basketData.map(cat => {
+    //         return cat.price
+    //     })
+
+    //     // Add all of the prices
+    //     totalPrice = allPrices.reduce((accumulator, value) => {
+    //         return accumulator + value;
+    //     }, 0);
+    //     // Return the price 
+    //     return totalPrice;
+    // }
 
     return(
         

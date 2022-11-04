@@ -12,7 +12,8 @@ function Store(props) {
       <div id="section-catInventory">
         <Catcard catsdata={props.cats}></Catcard>
       </div>
-      <div id="section-basket">
+      <div style={ props.displayCart ? { display:'block'} : {display : 'none'} }   id="section-basket">
+        <p>Cart goes here!</p>
         <Cart isVisible={props.displayCart}></Cart>
       </div>
     </div>

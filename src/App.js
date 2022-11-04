@@ -26,7 +26,6 @@ try {
   const catArray = newdata.map((cat) => {
     return{
             catid: cat.id,
-            catname: faker.name.firstName(),
             catimage: cat.url,
             price: faker.commerce.price(100, 200),
           };

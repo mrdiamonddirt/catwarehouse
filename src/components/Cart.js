@@ -16,7 +16,6 @@ useEffect(() => {
     async function totalPriceFunc(basketData) {
         // Map over the basketData and get all of the prices 
         let allPrices = basketData.map(cat => {
-            // console.log(typeof(cat.price))
             return Number(cat.price)
         })
 
@@ -25,11 +24,12 @@ useEffect(() => {
             return accumulator + value;
         }, 0);
         // set the total Price 
-        return priceAdd;
+        console.log(priceAdd)
+        setTotalPrice(priceAdd)
     } 
     totalPriceFunc(basketData)
-    console.log(totalPriceFunc(basketData))
-    }, [basketData])
+    // setTotalPrice(totalPriceFunc(basketData))
+}, [basketData])
 
     // // Function to calculate the total price
     // function totalPriceFunc (basketData){

@@ -68,8 +68,8 @@ function App() {
     <BrowserRouter>
     <Navbar showCart={openCart} basketQuanity={basketQuanity}></Navbar>
     <Routes>
-    <Route path='catwarehouse/'element={<Home displayCart={displayCart} basket={basket}></Home>} /> 
-    <Route path='/Catcard' element={ <Store addToCart={addToCart} cats={cats} displayCart={displayCart} basket={basket}></Store> } /> 
+    <Route path='catwarehouse/'element={<Home displayCart={displayCart} basket={basket}  remove={removeCart} clear={clearAll} ></Home>} /> 
+    <Route path='/Catcard' element={ <Store addToCart={addToCart} cats={cats} displayCart={displayCart} basket={basket} remove={removeCart} clear={clearAll}></Store> } /> 
     </Routes>
     
     <Footer></Footer>

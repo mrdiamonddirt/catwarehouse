@@ -1,6 +1,6 @@
-import { computeHeadingLevel } from "@testing-library/react";
 import React, { Component } from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 
 export const Home = () => {
@@ -16,7 +16,7 @@ export const Home = () => {
                 publishing software like Aldus PageMaker including versions of Lorem Ipsum.
             </Paragraph>
 
-            <Button>Enter Store</Button>
+            <Link to="/Catcard"><Button>Enter Store</Button></Link>
         </HomeWrapper>
     )
 }

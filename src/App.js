@@ -6,6 +6,7 @@ import Catcard from './components/Catcard';
 import {Home} from './components/Home';
 import { useEffect , useState } from "react";
 import { faker } from "@faker-js/faker";
+import { BrowserRouter, Routes, Route, Link} from 'react-router-dom'
 
 function App() {
 const[displayCart, setDisplayCart] = useState(false)
@@ -42,13 +43,18 @@ getCats()
   let basketQuanity = basket.length;
 
   return (
-    <div >
+    <>
+    <BrowserRouter>
     <Navbar showCart={openCart} basketQuanity={basketQuanity}></Navbar>
-    <Home></Home>
-    <Catcard catsdata={cats}></Catcard>
+    <Routes>
+    <Route path='/'element={<Home></Home>} /> 
+    <Route path='/Catcard' element={ <Catcard catsdata={cats}></Catcard> } /> 
+    </Routes>
     <Cart isVisible={displayCart}></Cart>
+
     <Footer></Footer>
-    </div>
+    </BrowserRouter>
+    </>
   );
 }
 

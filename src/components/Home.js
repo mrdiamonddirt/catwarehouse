@@ -61,7 +61,7 @@ const Button = styled.button`
 
     &:hover{
         cursor: pointer;
-        color: var(--darkBlue);
+        color: var(--lightBlue);
     }
 
 `

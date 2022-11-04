@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { Cart } from "./Cart";
 
 
-export const Home = () => {
+export const Home = (props) => {
 
     return (
         <HomeWrapper>
@@ -17,6 +18,11 @@ export const Home = () => {
             </Paragraph>
 
             <Link to="/Catcard"><Button >Enter Store</Button></Link>
+
+            <div style={ props.displayCart ? { display:'block'} : {display : 'none'} }   id="section-basket">
+                 <Cart basket={props.basket} isVisible={props.displayCart}></Cart>
+            </div>
+
         </HomeWrapper>
     )
 }

@@ -28,6 +28,7 @@ justify-content: center;
 align-items: center;
 text-align: center;
 /* background-color: aqua; */
+flex-wrap: wrap;
 height: 80vh;
 .cat{
     flex-direction: column;

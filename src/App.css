@@ -20,6 +20,22 @@ body{
 
 
 
+/* ---------------- STORE ------------ */
+
+#section-store{
+  background-color: red;
+  display: flex;
+}
+
+#section-catInventory{
+  background-color: green;
+}
+
+#section-basket{
+  background-color: blue;
+}
+
+
 /* ---------------- FOOTER ------------ */
 .footer {
   align-items: center;

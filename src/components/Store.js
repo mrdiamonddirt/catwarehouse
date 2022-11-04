@@ -8,11 +8,13 @@ function Store(props) {
 
   // Will be used to render componants => either inventory or inventory + basket modal 
   return(
-    <div id="section-store-">
-      <Catcard catsdata={props.cats}></Catcard>
-      <Cart isVisible={props.displayCart}></Cart>
-
-
+    <div id="section-store">
+      <div id="section-catInventory">
+        <Catcard catsdata={props.cats}></Catcard>
+      </div>
+      <div id="section-basket">
+        <Cart isVisible={props.displayCart}></Cart>
+      </div>
     </div>
   )
 

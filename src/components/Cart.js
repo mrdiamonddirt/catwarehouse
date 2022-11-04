@@ -39,16 +39,18 @@ useEffect(() => {
                 return(
                     <CartItem >
                     <img src={catItem.catimage}></img>
+                    <CartInfo>
                     <h2>{catItem.catname}</h2>
-                    <p>{catItem.price}</p>
+                    <p>{`£ ${catItem.price}`}</p>
+                    </CartInfo>
                 </CartItem>
     
                 )
             })}
            
-            <CartTotal>
-                <p>Total price:</p>
-                <h2>{totalPrice}</h2>
+            <CartTotal isVisible={props.isVisible}>
+                <h3>Total price:</h3>
+                <h4>{`£ ${totalPrice}`}</h4>
             </CartTotal>
         </CartWrapper>
     )
@@ -56,6 +58,7 @@ useEffect(() => {
 
 const CartWrapper= styled.div`
     position: fixed;
+    overflow: scroll;
     top: calc(10vh + 40px);
     right: ${(props)=>props.isVisible?"0px":"-300px"};
     width:25%;
@@ -63,8 +66,56 @@ const CartWrapper= styled.div`
     height: 100vh;
     z-index: 100;
     transition: right 0.3s;
+    h1{
+        color:var(--white);
+        padding-left: 150px;
+        font-weight: bold;
+    }
 `
 
-const CartItem= styled.div``
+const CartItem= styled.div`
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-bottom: 2px solid black;
+    margin-bottom: 20px;
+    img{
+        height: 100px;
+        width: 100px;
+        padding-bottom: 10px;
+    };
+`
+const CartInfo= styled.div`
+    h2,p{
+        color: var(--black);
+        padding-left: 30px; 
+        font-family :var(--fontSansSerif) ;
+        font-weight: bold;
+    }
 
-const CartTotal= styled.div``
+`
+
+const CartTotal= styled.div`
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--darkBlue);
+    width: 25%;
+    height: 5vh;
+    bottom: 0;
+     h3{  
+        padding-left: 20px; 
+        font-family :var(--fontSansSerif) ;
+        font-weight: bold;
+        color: var(--white);
+    }
+    h4{
+        letter-spacing: 4px;
+        color: var(--red);
+        padding-right: 20px;
+    }
+
+`

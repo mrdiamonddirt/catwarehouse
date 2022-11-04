@@ -36,7 +36,7 @@ height: 80vh;
     margin: 1%;
     padding: 2px;
     border-radius: 5px;
-    height: 250px;
+    height: 300px;
     width:200px;
     overflow: hidden;
 }

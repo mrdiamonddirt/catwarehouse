@@ -10,7 +10,7 @@ const Catcard = (props) => {
             return(
                 <div className='cat'>
                 <img alt='catimage' src={catObject.catimage}></img>
-                <p className='cat-name'>{catObject.catid}</p>
+                <p className='cat-name'>{catObject.catname}</p>
                 <p className='cat-price'>£{catObject.price}</p>
                 </div>           
                 )

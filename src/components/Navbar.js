@@ -11,6 +11,7 @@ const Navbar = (props) => {
         <Link to="/catwarehouse">  <MainLogo><img alt="Logo" src={Cats4Lyf}></img></MainLogo> </Link>
         <MidLogo><img alt="MidLogo" src={catmidlogo}></img></MidLogo>
         <Basket onClick={props.showCart}><img alt="BasketImg" src={basket}></img><BasketCounter>{props.basketQuanity}</BasketCounter></Basket>
+       
        </NavBarWrapper>
     )
 }

@@ -16,6 +16,7 @@
 
 body{
   margin: 0;
+  background-color: var(--cream);
 }
 
 
@@ -35,6 +36,8 @@ body{
 #section-store{
   display: flex;
   background-color: var(--cream);
+  padding-bottom: 10%;
+  min-height: 80vh;
 }
 
 #section-catInventory{
@@ -71,7 +74,8 @@ body{
   display: flex;
   height: 5vh;
   justify-content: center;
-  position: absolute;
+  margin-top: 5%;
+  position: fixed;
   width: 100vw;
 }
 

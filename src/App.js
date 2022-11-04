@@ -60,7 +60,7 @@ getCats()
     <Navbar showCart={openCart} basketQuanity={basketQuanity}></Navbar>
     <Routes>
     <Route path='catwarehouse/'element={<Home></Home>} /> 
-    <Route path='/Catcard' element={ <Store cats={cats} displayCart={displayCart} basket={basket}></Store> } /> 
+    <Route path='/Catcard' element={ <Store addToCart={addToCart} cats={cats} displayCart={displayCart} basket={basket}></Store> } /> 
     </Routes>
     <Footer></Footer>
     </BrowserRouter>

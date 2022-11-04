@@ -10,11 +10,11 @@ function Store(props) {
   return(
     <div id="section-store">
       <div id="section-catInventory">
-        <Catcard catsdata={props.cats}></Catcard>
+        <Catcard catInformation={props.addToCart} catsdata={props.cats}></Catcard>
       </div>
       <div style={ props.displayCart ? { display:'block'} : {display : 'none'} }   id="section-basket">
         <p>Cart goes here!</p>
-        <Cart isVisible={props.displayCart}></Cart>
+        <Cart basket={props.basket} isVisible={props.displayCart}></Cart>
       </div>
     </div>
   )

@@ -32,14 +32,17 @@ flex-wrap: wrap;
 height: 80vh;
 .cat{
     flex-direction: column;
-    margin: 5px;
+    margin: 1%;
     padding: 2px;
     border: 1px solid black;
     border-radius: 5px;
-
+    height: 250px;
+    width:200px;
+    overflow: hidden;
 }
 img{
     border-radius: 5px;
-    height: 100px;
+    height: 70%;
+    min-width:50%
 }
 `

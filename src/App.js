@@ -3,6 +3,7 @@ import './App.css';
 import Footer from './components/Footer';
 import {Cart} from './components/Cart';
 import Catcard from './components/Catcard';
+import Store from "./components/Store";
 import {Home} from './components/Home';
 import { useEffect , useState } from "react";
 import { faker } from "@faker-js/faker";
@@ -48,9 +49,9 @@ getCats()
     <Navbar showCart={openCart} basketQuanity={basketQuanity}></Navbar>
     <Routes>
     <Route path='catwarehouse/'element={<Home></Home>} /> 
-    <Route path='/Catcard' element={ <Catcard catsdata={cats}></Catcard> } /> 
+    <Route path='/Catcard' element={ <Store cats={cats} displayCart={displayCart}></Store> } /> 
     </Routes>
-    <Cart isVisible={displayCart}></Cart>
+    
 
     <Footer></Footer>
     </BrowserRouter>

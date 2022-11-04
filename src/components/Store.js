@@ -1,15 +1,18 @@
 import {useState} from "react";
+import Catcard from "./Catcard";
+import { Cart } from "./Cart";
 
-
-function Store() {
+function Store(props) {
 
 
 
   // Will be used to render componants => either inventory or inventory + basket modal 
   return(
     <div id="section-store-">
-      {/* Michals map of the catInventory => pass the cat inventory data & basket prop */}
-      {/* Basket component => pass the data from the basket to the basket component */}
+      <Catcard catsdata={props.cats}></Catcard>
+      <Cart isVisible={props.displayCart}></Cart>
+
+
     </div>
   )
 
